@@ -43,4 +43,34 @@ class Gis extends CI_Controller {
         );
 		$this->load->view('v_template', $data, FALSE);
 	}
+
+    public function circle()
+	{
+        $data = array(
+            'judul' => 'Circle',
+            'page' => 'circle/v_circle',
+            'dir' => 'Home '
+        );
+		$this->load->view('v_template', $data, FALSE);
+	}
+
+    public function polyline()
+	{
+        $data = array(
+            'judul' => 'Polyline',
+            'page' => 'polyline/v_polyline',
+            'dir' => 'Home '
+        );
+		$this->load->view('v_template', $data, FALSE);
+	}
+
+    public function polygon()
+	{
+        $data = array(
+            'judul' => 'Polygon',
+            'page' => 'polygon/v_polygon',
+            'dir' => 'Home '
+        );
+		$this->load->view('v_template', $data, FALSE);
+	}
 }
