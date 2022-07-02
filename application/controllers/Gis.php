@@ -33,4 +33,14 @@ class Gis extends CI_Controller {
         );
 		$this->load->view('v_template', $data, FALSE);
 	}
+
+    public function marker()
+	{
+        $data = array(
+            'judul' => 'Marker',
+            'page' => 'marker/v_marker',
+            'dir' => 'Home '
+        );
+		$this->load->view('v_template', $data, FALSE);
+	}
 }
