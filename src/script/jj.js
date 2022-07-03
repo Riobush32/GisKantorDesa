@@ -43,5 +43,7 @@ var baseLayers = {
     'Dark': peta4,
 };
 
+var mainLock11 = [2.983498226962545, 99.62787791325914];
+
 
 var layerControl = L.control.layers(baseLayers).addTo(map);

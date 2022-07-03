@@ -44,6 +44,26 @@
 		integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
 		crossorigin=""></script>
 
+		<!--   Core JS Files   -->
+	<script src="<?= base_url('argon') ?>/assets/js/core/popper.min.js"></script>
+	<script src="<?= base_url('argon') ?>/assets/js/core/bootstrap.min.js"></script>
+	<script src="<?= base_url('argon') ?>/assets/js/plugins/perfect-scrollbar.min.js"></script>
+	<script src="<?= base_url('argon') ?>/assets/js/plugins/smooth-scrollbar.min.js"></script>
+	<script>
+		var win = navigator.platform.indexOf('Win') > -1;
+		if (win && document.querySelector('#sidenav-scrollbar')) {
+			var options = {
+				damping: '0.5'
+			}
+			Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+		}
+
+	</script>
+	<!-- Github buttons -->
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
+	<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+	<script src="<?= base_url('argon') ?>/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+
         <style>
             html, body {
                 height: 100%;
@@ -243,14 +263,14 @@
 		</nav>
 		<!-- End Navbar -->
 		<div class="container-fluid py-4">
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-12">
 					<div class="card mb-4">
 						<div class="card-header pb-0">
 							<h6><?= $judul ?></h6>
 						</div>
 						<hr>
-						<div class="card-body px-4 pt-4 pb-4" style="height:600px">
+						<div class="card-body px-4 pt-4 pb-4" style="height:600px"> -->
 							<!-- content -->
 							<?php
                                 if($page){
@@ -259,10 +279,10 @@
                             ?>
 							<!-- content end-->
 
-						</div>
+						<!-- </div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			
 		</div>
 	</main>
@@ -273,25 +293,7 @@
 
 
 
-	<!--   Core JS Files   -->
-	<script src="<?= base_url('argon') ?>/assets/js/core/popper.min.js"></script>
-	<script src="<?= base_url('argon') ?>/assets/js/core/bootstrap.min.js"></script>
-	<script src="<?= base_url('argon') ?>/assets/js/plugins/perfect-scrollbar.min.js"></script>
-	<script src="<?= base_url('argon') ?>/assets/js/plugins/smooth-scrollbar.min.js"></script>
-	<script>
-		var win = navigator.platform.indexOf('Win') > -1;
-		if (win && document.querySelector('#sidenav-scrollbar')) {
-			var options = {
-				damping: '0.5'
-			}
-			Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-		}
-
-	</script>
-	<!-- Github buttons -->
-	<script async defer src="https://buttons.github.io/buttons.js"></script>
-	<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-	<script src="<?= base_url('argon') ?>/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+	
 </body>
 
 </html>

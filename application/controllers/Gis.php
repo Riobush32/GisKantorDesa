@@ -44,6 +44,16 @@ class Gis extends CI_Controller {
 		$this->load->view('v_template', $data, FALSE);
 	}
 
+    public function makeMarker()
+	{
+        $data = array(
+            'judul' => 'Add Marker',
+            'page' => 'marker/v_add',
+            'dir' => 'Home / Marker'
+        );
+		$this->load->view('v_template', $data, FALSE);
+	}
+
     public function circle()
 	{
         $data = array(
@@ -73,4 +83,6 @@ class Gis extends CI_Controller {
         );
 		$this->load->view('v_template', $data, FALSE);
 	}
+
+    
 }
