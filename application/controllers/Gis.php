@@ -3,6 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Gis extends CI_Controller {
 
+    public function __construct()
+	{
+		parent::__construct();
+		
+		$this->load->model('m_lokasi');
+		
+	}
+
 	
 	public function index()
 	{
@@ -39,7 +47,8 @@ class Gis extends CI_Controller {
         $data = array(
             'judul' => 'Marker',
             'page' => 'marker/v_marker',
-            'dir' => 'Home '
+            'dir' => 'Home ',
+            'lokasi' => $this->m_lokasi->allData(),
         );
 		$this->load->view('v_template', $data, FALSE);
 	}

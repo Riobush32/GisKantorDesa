@@ -37,18 +37,71 @@
 				<h6>Input In Here</h6>
 			</div>
 			<hr>
+			<?php
+				//notifikasi form tidak boleh kosong
+				echo validation_errors('<div class="alert alert-danger">','</div>');
+				#notifikasi pesan data berhasil disimpan
+				if ($this->session->flashdata('pesan')) {
+					# code...
+					echo '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">';
+        			echo '<span class="alert-icon"><i class="ni ni-like-2"></i></span>';
+        			echo '<span class="alert-text"><strong>Success!</strong>';
+					echo $this->session->flashdata('pesan');
+					echo '</span>';
+        			echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">';
+            		echo '<span aria-hidden="true">&times;</span>';
+        			echo '</button>';
+    				echo '</div>';
+			} ?>
 			<div class="card-body px-4 pt-4 pb-4" style="height:600px; overflow:auto">
-				<!-- <form action=""> -->
+				<?php echo form_open_multipart('lokasi/input') ?>
+
+				<div class="form-group">
+					<label class="form-control-label" for="desa">Desa</label>
+					<input type="text" class="form-control" id="desa" name="desa" required>
+				</div>
+				<div class="form-group">
+					<label class="form-control-label" for="kepala_desa">Kepala Desa</label>
+					<input type="text" class="form-control" id="kepala_desa" name="kepala_desa" required>
+				</div>
+				<div class="form-group">
+					<label class="form-control-label" for="dana_desa">Dana Desa</label>
+					<input type="text" class="form-control" id="dana_desa" name="dana_desa" required>
+				</div>
+				<div class="form-group">
+					<label class="form-control-label" for="alokasi_dana_desa">Alokasi Dana Desa</label>
+					<input type="text" class="form-control" id="alokasi_dana_desa" name="alokasi_dana_desa" required>
+				</div>
+				<div class="form-group">
+					<label class="form-control-label" for="kecamatan">Kecamatan</label>
+					<input type="text" class="form-control" id="kecamatan" name="kecamatan" required>
+				</div>
+				<div class="form-group">
+					<label class="form-control-label" for="kabupaten">Kabupaten</label>
+					<input type="text" class="form-control" id="kabupaten" name="kabupaten" required>
+				</div>
+				<div class="form-group">
+					<label class="form-control-label" for="provinsi">Provinsi</label>
+					<input type="text" class="form-control" id="provinsi" name="provinsi" required>
+				</div>
+
 				<div class="form-group">
 					<label class="form-control-label" for="latitude">Latitude</label>
-					<input type="text" class="form-control" id="Latitude" name="latitude">
+					<input type="text" class="form-control" id="Latitude" name="latitude" required>
 				</div>
 				<div class="form-group">
 					<label class="form-control-label" for="longitude">Longitude</label>
-					<input type="text" class="form-control" id="Longitude" name="longitude">
+					<input type="text" class="form-control" id="Longitude" name="longitude" required>
 				</div>
 
-				<!-- </form> -->
+				<div class="form-group">
+					<label class="form-control-label" for="gambar">Gambar</label>
+					<input type="file" class="form-control" id="gambar" name="gambar" required>
+				</div>
+
+				<button type="submit" class="btn bg-gradient-success">Save</button>
+
+				<?php echo form_close() ?>
 			</div>
 		</div>
 	</div>
