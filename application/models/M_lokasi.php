@@ -23,6 +23,8 @@ class M_lokasi extends CI_Model {
         return $this->db->get()->row();
     }
 
+    
+
     #editdata
     public function edit($data)
     {

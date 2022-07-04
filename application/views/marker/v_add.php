@@ -35,6 +35,7 @@
 		<div class="card mb-4">
 			<div class="card-header pb-0">
 				<h6>Input In Here</h6>
+				
 			</div>
 			<hr>
 			<?php
@@ -65,6 +66,7 @@
 					<input type="text" class="form-control" id="kepala_desa" name="kepala_desa" required>
 				</div>
 				<div class="form-group">
+					
 					<label class="form-control-label" for="dana_desa">Dana Desa</label>
 					<input type="text" class="form-control" id="dana_desa" name="dana_desa" required>
 				</div>
@@ -87,11 +89,11 @@
 
 				<div class="form-group">
 					<label class="form-control-label" for="latitude">Latitude</label>
-					<input type="text" class="form-control" id="Latitude" name="latitude" required>
+					<input readonly type="text" class="form-control" id="Latitude" name="latitude" required>
 				</div>
 				<div class="form-group">
 					<label class="form-control-label" for="longitude">Longitude</label>
-					<input type="text" class="form-control" id="Longitude" name="longitude" required>
+					<input readonly type="text" class="form-control" id="Longitude" name="longitude" required>
 				</div>
 
 				<div class="form-group">
