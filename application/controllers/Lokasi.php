@@ -77,7 +77,7 @@ class Lokasi extends CI_Controller {
                     $this->m_lokasi->input($data);
                     #notifikasi data berhasil disimpan
                     $this->session->set_flashdata('pesan', 'Data Lokasi Berhasil Disimpan !!');
-                    redirect('gis/makeMaker');
+                    redirect('gis/makeMarker');
                 }
 			
 			
@@ -151,7 +151,7 @@ class Lokasi extends CI_Controller {
                     $this->m_lokasi->edit($data);
                     #notifikasi data berhasil disimpan
                     $this->session->set_flashdata('pesan', 'Data Lokasi Berhasil Disimpan !!');
-                    redirect('lokasi/viewEdit');
+                    redirect('gis/marker');
                 }
                 else
                 {
@@ -183,7 +183,7 @@ class Lokasi extends CI_Controller {
                     $this->m_lokasi->edit($data);
                     #notifikasi data berhasil disimpan
                     $this->session->set_flashdata('pesan', 'Data Lokasi Berhasil Disimpan !!');
-                    redirect('lokasi/viewEdit');
+                    redirect('gis/marker');
                 }
 	    }
 	}
