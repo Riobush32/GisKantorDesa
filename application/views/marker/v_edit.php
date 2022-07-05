@@ -101,7 +101,11 @@
 					<input type="file" class="form-control" id="gambar" name="gambar" placeholder="<?=$lokasi->gambar?>">
 				</div>
 
-				<button type="submit" class="btn bg-gradient-success">Save</button>
+				<picture>
+					<img src="<?= base_url('./gambar/'.$lokasi->gambar)?>" class="img-fluid img-thumbnail">
+				</picture>
+
+				<button type="submit" class="btn bg-gradient-success mt-3">Save</button>
 
 				<?php echo form_close() ?>
 			</div>

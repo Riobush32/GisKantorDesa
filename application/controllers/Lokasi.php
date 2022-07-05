@@ -125,9 +125,11 @@ class Lokasi extends CI_Controller {
             );
             $this->load->view('v_template', $data, FALSE);
 	    } else {
+           
             $config['upload_path']          = './gambar/';
             $config['allowed_types']        = 'gif|jpg|png|jpeg';
             $config['max_size']             = 1000000;
+           
 
             $this->load->library('upload');
             $this->upload->initialize($config);
@@ -136,6 +138,7 @@ class Lokasi extends CI_Controller {
 
                 if ( ! $this->upload->do_upload('gambar'))
                 {
+                    
                     $data = array(
                         'id' => $id,
                         'desa' => $this->input->post('desa'),
@@ -155,15 +158,21 @@ class Lokasi extends CI_Controller {
                 }
                 else
                 {
+                    
+                    $item = $this->m_lokasi->detail($id);
 
                     
+        
 
-                    $item = $this->m_lokasi->detail($id);
                     if($item->image == null){
                         $target_file = base_url('gambar/'.$item->gambar);
                         unlink($target_file);
                         $gambar = $this->upload->data();
                         $gambar = $gambar['file_name'];
+                        $upload_data = array('upload_data' => $this->upload->data());
+                        $config['image_library']        = 'gd2';
+                        $config['source_imag']          = './gambar/' . $upload_data['upload_data']['file_name'];
+                        $this->load->library('image_lib', $config);
                             #simpan data ke database
                         $data = array(
                             'id' => $id,
@@ -200,5 +209,16 @@ class Lokasi extends CI_Controller {
 		$this->session->set_flashdata('pesan', 'data berhasil di hapus');
 		redirect('gis/marker');
 	}
+
+    public function viewDetail($id)
+    {
+        $data = array(
+            'judul' => 'View Detail',
+            'page' => 'marker/v_detail',
+            'dir' => 'Home / Marker ',
+            'lokasi' => $this->m_lokasi->detail($id),
+        );
+        $this->load->view('v_template', $data, FALSE);
+    }
 
 }

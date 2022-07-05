@@ -101,6 +101,8 @@
 					<input type="file" class="form-control" id="gambar" name="gambar" required>
 				</div>
 
+				
+
 				<button type="submit" class="btn bg-gradient-success">Save</button>
 
 				<?php echo form_close() ?>

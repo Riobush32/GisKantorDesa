@@ -32,9 +32,11 @@ var peta4 = L.tileLayer(
 
 var map = L.map('map', {
     center: [2.983498226962545, 99.62787791325914],
-    zoom: 15,
+    zoom: 11,
     layers: [peta1],
 });
+
+// var map = L.map('map').setView([51.505, -0.09], 13);
 
 var baseLayers = {
     'Default': peta1,
@@ -43,7 +45,7 @@ var baseLayers = {
     'Dark': peta4,
 };
 
-var mainLock11 = [2.983498226962545, 99.62787791325914];
+// var mainLock11 = [2.983498226962545, 99.62787791325914];
 
 
 var layerControl = L.control.layers(baseLayers).addTo(map);
